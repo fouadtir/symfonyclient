@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Ajouter client!{% endblock %}</title>
+        {% block stylesheets %}<meta charset="UTF-8">
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+        <!-- Compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://use.fontawesome.com/66c12c9159.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        <nav>
+            <div class="nav-wrapper grey darken-1">
+                <a href="index.php" <i class="fa fa-home fa-4x" aria-hidden="true"></i></a>
+            </div>
+        </nav>
+          <form action="{{path("ajoutClient")}}" method="post">
+
+            {{ form_widget(form) }}
+
+            <input name='submit' type="submit">
+
+          </form>
+
+          {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

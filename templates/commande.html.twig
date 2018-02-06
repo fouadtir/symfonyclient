@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}<meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" href="/css/commande.css" >
+        <!-- Compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://use.fontawesome.com/66c12c9159.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        <nav>
+            <div class="nav-wrapper grey darken-1">
+                <a href="index.php" <i class="fa fa-home fa-4x" aria-hidden="true"></i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <a href="ajoutClient">Ajout Client</a>
+                </ul>
+            </div>
+        </nav>
+        <table>
+        <caption>Liste des commandes</caption>
+          <tr>
+            <th>Numero commande</th>
+            <th>Date commande</th>
+            <th>Nombre articles</th>
+            <th>Montant HT</th>
+          </tr>
+            {% for commande in commandes %}
+                <tbody
+                    <tr>
+                        <td>{{ commande.numeroCommande }}</td>
+                        <td>{{ commande.dateCommande.format("d/m/Y") }}</td>
+                        <td><a href="article?id={{commande.id}}">{{ commande.nombreArticle }} </td>
+                        <td>{{ commande.montantHT }}</td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+          </table>
+          {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

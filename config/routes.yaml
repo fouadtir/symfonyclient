@@ -1,0 +1,19 @@
+#index:
+#    path: /
+#    defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+#ajoutClient:
+#    path: /ajoutClient
+#    defaults: { _controller: 'App\Controller\AjoutClientController::index' }
+
+#modifClient:
+#    path: /modifClient
+#    defaults: { _controller: 'App\Controller\ModifClientController::index' }
+
+#commande:
+#    path: /commande
+#    defaults: { _controller: 'App\CommandeController::index' }
+
+#article:
+#    path: /article
+#    defaults: { _controller: 'App\ArticleController::index' }
